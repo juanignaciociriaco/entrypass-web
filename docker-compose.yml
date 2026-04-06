@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  entrypass-web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: entrypass-app
+    ports:
+      - "8080:80"
+    restart: always
+    networks:
+      - entrypass-network
+
+networks:
+  entrypass-network:
+    driver: bridge
